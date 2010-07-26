@@ -576,7 +576,7 @@ MonomeXXhDevice::oscLedStateChangeEvent(unsigned int column, unsigned int row, b
 		messagePackLedStateChange(&message, state ? 1 : 0, column, row);	
 		write((char *)&message, sizeof(t_message));
 		}
-	else  if (_type <= kDeviceType_64) {//256 128 64
+	else  if (_type <= kDeviceType_mk) {//256 128 64
 		t_message message;
 		if (state == 1) messagePack_256_led_on(&message, column, row);
 		else messagePack_256_led_off(&message, column, row);
@@ -605,7 +605,7 @@ if (_type == kDeviceType_40h)
     messagePackLedIntensity(&message, i);
 	  write((char *)&message, sizeof(t_message));
 	}
-if (_type <= kDeviceType_64)//256 128 64
+if (_type <= kDeviceType_mk)//256 128 64
 	{ t_256_1byte_message message;
  messagePack_256_intensity(&message, i);
   write((char *)&message, sizeof(t_256_1byte_message));
@@ -747,7 +747,7 @@ MonomeXXhDevice::oscLedRowStateChangeEvent(unsigned int row, unsigned int numBit
 
 		write((char *)&message, sizeof(t_message));    
 	}//40h
-	else if (_type <= kDeviceType_64) // 256, 128 and 64
+	else if (_type <= kDeviceType_mk) // 256, 128 and 64
 	{
 		// 1-byte row command:
 		//	- 64 -> always use this, since there is only 1 byte-row
@@ -877,7 +877,7 @@ MonomeXXhDevice::oscLedColumnStateChangeEvent(unsigned int column, unsigned int 
 
 		write((char *)&message, sizeof(t_message));    
 	}//40h
-	else if (_type <= kDeviceType_64) // 256, 128 and 64
+	else if (_type <= kDeviceType_mk) // 256, 128 and 64
 	{
 		// 1-byte col command:
 		//	- 64 -> always use this, since there is only 1 byte-col
@@ -1054,7 +1054,7 @@ MonomeXXhDevice::oscLedFrameEvent(unsigned int column, unsigned int row, unsigne
 				break;
 		}
 	}
-	else if (_type <= kDeviceType_64)
+	else if (_type <= kDeviceType_mk)
 	{
 		t_256_frame_message message;
 		int quadrant = ((column - _oscStartColumn) / 8) + (((row - _oscStartRow) / 8) * 2);
@@ -1188,7 +1188,7 @@ MonomeXXhDevice::oscAdcEnableStateChangeEvent(unsigned int adcIndex, bool adcEna
 		messagePackAdcEnable(&message, adcIndex, adcEnableState ? 1 : 0);
 		write((char *)&message, sizeof(t_message));
 		}   
-	else if (_type <= kDeviceType_64) //256 128 64
+	else if (_type <= kDeviceType_mk) //256 128 64
 		{
 		t_256_1byte_message  message;
 		if (adcEnableState) messagePack_256_activatePort(&message, adcIndex);
@@ -1207,7 +1207,7 @@ MonomeXXhDevice::oscTiltEnableStateChangeEvent(bool tiltEnableState)
 
 	if (_type == kDeviceType_40h) return;
 
-	else if (_type <= kDeviceType_64) //256 128 64
+	else if (_type <= kDeviceType_mk) //256 128 64
 		{
 		t_256_1byte_message  message;
 		if (tiltEnableState) messagePack_256_activatePort(&message, 1);
@@ -1253,7 +1253,7 @@ MonomeXXhDevice::MIDILedStateChangeEvent(unsigned char MIDINoteNumber, unsigned 
 	
 if (_type == kDeviceType_40h)
        messagePackLedStateChange(&message, MIDIVelocity ? 1 : 0, column, row);
-else  if (_type <= kDeviceType_64)//256 128 64
+else  if (_type <= kDeviceType_mk)//256 128 64
 	{
 	if (MIDIVelocity > 0) messagePack_256_led_on(&message, column, row);
 	else messagePack_256_led_off(&message, column, row);

@@ -1,0 +1,271 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\MonomeSerial.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MONOMESERIAL_DIALOG DIALOGEX 0, 0, 218, 342
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MonomeSerial"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO1,77,20,118,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,77,109,118,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,77,128,90,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,99,162,97,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO5,99,199,97,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "ADC 0",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,275,36,10
+    CONTROL         "ADC 1",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,288,36,10
+    CONTROL         "ADC 2",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,301,36,10
+    CONTROL         "ADC 3",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,314,36,10
+    CONTROL         "Enc 0",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,275,33,10
+    CONTROL         "Enc 1",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,288,33,10
+    RTEXT           "I/O Protocol :",IDC_STATIC,13,22,61,8
+    RTEXT           "Host Address :",IDC_STATIC,13,39,61,8
+    RTEXT           "Host Port : ",IDC_STATIC,16,56,60,8
+    RTEXT           "Listen Port : ",IDC_STATIC,16,72,60,8
+    LTEXT           "Protocol Settings",IDC_STATIC,13,3,62,8
+    LTEXT           "Device Settings",IDC_STATIC,13,93,62,8
+    LTEXT           "Device-Specific Protocol Settings",IDC_STATIC,19,147,107,8
+    LTEXT           "Device :",IDC_STATIC,49,110,27,8
+    LTEXT           "Cable Orientation :",IDC_STATIC,15,129,62,8
+    RTEXT           "Address Pattern Prefix :",IDC_LABEL,19,163,78,8
+    LTEXT           "ADC/Encoder States",IDC_STATIC,19,261,67,8
+    GROUPBOX        "",IDC_STATIC,7,99,203,237
+    GROUPBOX        "",IDC_STATIC,7,9,203,79
+    GROUPBOX        "",IDC_STATIC,14,267,188,63
+    EDITTEXT        IDC_EDIT4,99,161,97,14,ES_AUTOHSCROLL
+    RTEXT           "Starting Column :",IDC_LABEL2,19,182,78,8
+    RTEXT           "Starting Row :",IDC_LABEL3,19,200,78,8
+    RTEXT           "ADC Offset :",IDC_LABEL4,19,218,78,8
+    RTEXT           "Encoder Offset :",IDC_LABEL5,19,237,78,8
+    EDITTEXT        IDC_EDIT11,77,36,118,14,ES_AUTOHSCROLL | ES_WANTRETURN
+    EDITTEXT        IDC_EDIT1,77,53,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,139,53,11,14
+    EDITTEXT        IDC_EDIT2,77,69,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,139,69,11,14
+    EDITTEXT        IDC_EDIT9,99,180,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,180,11,14
+    EDITTEXT        IDC_EDIT12,99,198,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,198,11,14
+    EDITTEXT        IDC_EDIT13,99,216,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,216,11,14
+    EDITTEXT        IDC_EDIT14,99,235,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,235,11,14
+    EDITTEXT        IDC_EDIT15,99,180,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN7,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,180,11,14
+    EDITTEXT        IDC_EDIT16,99,216,62,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN8,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,161,216,11,14
+    GROUPBOX        "",IDC_STATIC,15,153,188,101
+END
+
+IDD_FRAMEOWNER DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,2,1,5
+ PRODUCTVERSION 0,2,1,5
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "OSC/MIDI router for Monome Serial Devices."
+            VALUE "CompanyName", "Monome"
+            VALUE "FileDescription", "MonomeSerial"
+            VALUE "FileVersion", "0.2.1.5"
+            VALUE "InternalName", "MonomeSerial.exe"
+            VALUE "LegalCopyright", "(c) Monome.  All rights reserved."
+            VALUE "OriginalFilename", "MonomeSerial.exe"
+            VALUE "ProductName", "MonomeSerial"
+            VALUE "ProductVersion", "0.2.1.5"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MONOMESERIAL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        VERTGUIDE, 139
+        VERTGUIDE, 202
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 335
+    END
+
+    IDD_FRAMEOWNER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "monome_serial.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MONOMESERIAL_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 5, 0
+0x494d, 0x4944, "\000" 
+    IDC_COMBO1, 0x403, 17, 0
+0x704f, 0x6e65, 0x6f53, 0x6e75, 0x4364, 0x6e6f, 0x7274, 0x6c6f, "\000" 
+    IDC_COMBO3, 0x403, 5, 0
+0x656c, 0x7466, "\000" 
+    IDC_COMBO3, 0x403, 3, 0
+0x7075, "\000" 
+    IDC_COMBO3, 0x403, 6, 0
+0x6972, 0x6867, 0x0074, 
+    IDC_COMBO3, 0x403, 5, 0
+0x6f64, 0x6e77, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PREFIX              "Address Pattern Prefix :"
+    IDS_COL                 "Starting Column :"
+    IDS_ROW                 "Starting Row :"
+    IDS_ADC                 "ADC Offset :"
+    IDS_ENC                 "Encoder Offset :"
+    IDS_INDEVICE            "Input Device :"
+    IDS_INCHANNEL           "Input Channel :"
+    IDS_OUTDEVICE           "Output Device :"
+    IDS_OUTCHANNEL          "Output Channel :"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\MonomeSerial.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

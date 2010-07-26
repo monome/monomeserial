@@ -1,0 +1,42 @@
+Built and Compiled using MS Visual Studio/Visual C++ 2005 Professional, using VS Service Pack 1.
+
+all necessary source files are included, including the oscpack source code, and the MIDI library source code (by Ross Bencia and Leslie Sanford, respectively).
+
+
+
+you must link to MFC, either static (as Monome Serial does), or dynamically.  This also means you will need a full version of Visual Studio, as VC++Express 05 and 08 does not include MFC (sorry).
+
+
+The resource files are located in a folder called Res, in my original project they were located in the top level project folder.   you may need to import them using the Resource Editor.  This should include the Form Dialog Resource file.
+
+
+In the linker settings, make sure you set the following libraries in the 'Additional Dependancies' section:
+- winmm.lib 
+- ws2_32.lib
+
+NOTE -> these are Winsock2 and Win MultiMedia, both used by OscPack (WinMM used in the MIDI library as well).
+
+
+
+the following PreProcessor Symbols are defined in the Debug Build:
+- WIN32
+- _WINDOWS
+- _DEBUG
+- DEBUG_PRINT
+- _CRT_SECURE_NO_DEPRECATE
+- _CRT_SECURE_NO_WARNINGS
+
+and for the Release Build:
+- WIN32
+- _WINDOWS
+- NDEBUG
+- _CRT_SECURE_NO_DEPRECATE
+- _CRT_SECURE_NO_WARNINGS
+
+
+If you have any additional question, feel free to contact me (Daniel Battaglia), at either:
+- kid_sputnik@yahoo.com
+OR
+- daniel@kid-sputnik.com
+
+thanks, and enjoy

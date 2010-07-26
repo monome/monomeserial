@@ -1,0 +1,23 @@
+; g:\mingw\3.3.1\bin\dlltool.exe --output-def=tre.def tre-ast.o tre-compile.o tre-filter.o tre-match-backtrack.o tre-match-parallel.o tre-mem.o tre-parse.o tre-stack.o regcomp.o regexec.o regerror.o tre-match-approx.o libtre-dllversion.o libtre-dll-res.o
+EXPORTS
+	DllGetVersion @ 1 ; 
+	regaexec @ 2 ; 
+	reganexec @ 3 ; 
+	regaparams_default @ 4 ; 
+	regawexec @ 5 ; 
+	regawnexec @ 6 ; 
+	regcomp @ 7 ; 
+	regerror @ 8 ; 
+	regexec @ 9 ; 
+	regfree @ 10 ; 
+	regncomp @ 11 ; 
+	regnexec @ 12 ; 
+	reguexec @ 13 ; 
+	regwcomp @ 14 ; 
+	regwexec @ 15 ; 
+	regwncomp @ 16 ; 
+	regwnexec @ 17 ; 
+	tre_config @ 18 ; 
+	tre_have_approx @ 19 ; 
+	tre_have_backrefs @ 20 ; 
+	tre_version @ 21 ; 

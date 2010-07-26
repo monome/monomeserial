@@ -1,0 +1,19 @@
+TODO / NOTES -> REGARDING NEW OSC CODE:
+
+finally changing OSC the correct way : removing liblo calls altogether, as well as the OscAtoms system, which is redundant
+if we are using oscpack (which uses a similar but cleaner system).
+
+ApplicationController's OscMethods SHOULD be oscpack ready, but im not positive (didnt try building yet).
+
+still try to use OscHostAddress and OscContext.
+
+use some code from the OscIoController files.
+
+************IO Methods now are***************
+OscController::send(const OutboundPacketStream &stream)
+AND
+OscController::loMethodHandler(const IpEndpointName &ipEndpoint, const OscReceivedMessage &msg)
+
+
+when possible, use the iterator interface for OscReceive, instead of the stream interface (use stream for sending only)
+-> this also fits in with the majority of MonomeSerial code, which uses list<OscAtom*> or vectors, and therefore iterators.

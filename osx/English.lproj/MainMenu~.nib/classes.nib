@@ -1,0 +1,50 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                adc0SwitchButtonClicked = id; 
+                adc1SwitchButtonClicked = id; 
+                adc2SwitchButtonClicked = id; 
+                adc3SwitchButtonClicked = id; 
+                cableOrientationSelected = id; 
+                deviceSelected = id; 
+                enc0SwitchButtonClicked = id; 
+                enc1SwitchButtonClicked = id; 
+                ioProtocolSelected = id; 
+                midiInputChannelSelected = id; 
+                midiInputDeviceSelected = id; 
+                midiOutputChannelSelected = id; 
+                midiOutputDeviceSelected = id; 
+            }; 
+            CLASS = AppController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                adc0SwitchButton = NSButton; 
+                adc1SwitchButton = NSButton; 
+                adc2SwitchButton = NSButton; 
+                adc3SwitchButton = NSButton; 
+                cableOrientationPopUpButton = NSPopUpButton; 
+                devicePopUpButton = NSPopUpButton; 
+                deviceSpecificProtocolTabView = NSTabView; 
+                enc0SwitchButton = NSButton; 
+                enc1SwitchButton = NSButton; 
+                ioProtocolPopUpButton = NSPopUpButton; 
+                midiInputChannelPopUpButton = NSPopUpButton; 
+                midiInputDevicePopUpButton = NSPopUpButton; 
+                midiOutputChannelPopUpButton = NSPopUpButton; 
+                midiOutputDevicePopUpButton = NSPopUpButton; 
+                oscAdcOffsetTextField = NSTextField; 
+                oscAddressPatternPrefixTextField = NSTextField; 
+                oscEncOffsetTextField = NSTextField; 
+                oscHostAddressTextField = NSTextField; 
+                oscHostPortTextField = NSTextField; 
+                oscListenPortTextField = NSTextField; 
+                oscStartColumnTextField = NSTextField; 
+                oscStartRowTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

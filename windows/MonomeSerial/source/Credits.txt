@@ -1,0 +1,28 @@
+Monome Serial XP by Daniel Battaglia
+------------------------------------------
+
+Initial Monome Serial OSX application:
+- Joe Lake, Brian Crabtree, Daniel Battaglia, Steve Duda
+
+Various free/open-source libraries, toolkits and code used for this Win32 port (these are all great and highly recommended):
+
+- MIDI class library by Leslie Sanford
+	- http://www.codeproject.com/audio/midiwrapper.asp
+	
+- OSC library (oscpack) by Ross Bencina <rossb@audiomulch.com> 
+	- http://www.audiomulch.com/~rossb/oscpack
+	- this is highly recommended by me for anyone looking for a cross-platform, easy to use Osc Library, that
+	  conforms to the same interface as the C++ Standard Library.  
+	
+- OSC library in MonomeSerial OSX is liblo (by Steve Harris and Nicholas Humfrey).  some ideas and interface are preset in the Win32 version
+	- http://liblo.sourceforge.net/
+
+---------------------------------------------------------
+MonomeSerial for Windows was created in Visual Studio 2005, using Visual C++ and MFC.  
+
+This code is statically linked to the MFC runtime library.  Only the GUI uses MFC, all code at the ApplicationController level and below are native C++ and Win32.
+
+If you need any help or have any questions, feel free to write me:
+
+-Daniel Battaglia
+- kid_sputnik@yahoo.com.

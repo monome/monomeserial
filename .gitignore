@@ -1,0 +1,7 @@
+.*swp
+*.o
+
+osx/build
+windows/Debug
+windows/Release
+windows/MonomeSerial/Debug

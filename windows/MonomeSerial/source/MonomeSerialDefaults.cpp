@@ -23,7 +23,10 @@
  */
 //--------------------------------------------
 
+#ifdef WIN32
 #include "stdafx.h"
+#endif
+
 #include "MonomeSerialDefaults.h"
 #include "ApplicationController.h"
 	 

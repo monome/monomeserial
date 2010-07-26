@@ -50,6 +50,7 @@
 
 #include "../serial/message.h"
 #include "../serial/message256.h"
+#include "../serial/messageMK.h"
 
 #define kOscTypeTagInt                        "i"
 #define kOscTypeTagFloat                      "f"
@@ -82,10 +83,35 @@
 #define kOscDefaultAddrPatternSystemDevType		 "/sys/type"
 #define kOscDefaultAddrPatternSystemDevSerial	 "/sys/serial"
 
+
+#define kOscDefaultAddrPatternSystemAuxVersion   "/sys/aux/version"
+//auxout
+#define kOscDefaultAddrPatternSystemAuxAnalog    "/sys/aux/analog"
+#define kOscDefaultAddrPatternSystemAuxDigital   "/sys/aux/digital"
+#define kOscDefaultAddrPatternSystemAuxEncoder   "/sys/aux/encoder"
+//auxin
+#define kOscDefaultAddrPatternSystemAuxEnable    "/sys/aux/enable"
+#define kOscDefaultAddrPatternSystemAuxDirection "/sys/aux/direction"
+#define kOscDefaultAddrPatternSystemAuxState     "/sys/aux/state"
+
+//suffixed just in case. delete either above or below depending on where these are implemented
+#define kOscDefaultAddrPatternAuxVersionSuffix   "/aux/version"
+//auxout
+#define kOscDefaultAddrPatternAuxAnalogSuffix    "/aux/analog"
+#define kOscDefaultAddrPatternAuxDigitalSuffix   "/aux/digital"
+#define kOscDefaultAddrPatternAuxEncoderSuffix   "/aux/encoder"
+//auxin
+#define kOscDefaultAddrPatternAuxEnableSuffix    "/aux/enable"
+#define kOscDefaultAddrPatternAuxDirectionSuffix "/aux/direction"
+#define kOscDefaultAddrPatternAuxStateSuffix     "/aux/state"
+
+
+
 #define kOscDeviceType40h						"40h"
 #define kOscDeviceType64						"64"
 #define kOscDeviceType128						"128"
 #define kOscDeviceType256						"256"
+#define kOscDeviceTypeMK						"mk"
 
 #define kOscDeviceOrientationUp					"up"
 #define kOscDeviceOrientationRight				"right"
@@ -130,6 +156,16 @@
 
 #define kOscDefaultTypeTagsSysReportSingle       kOscTypeTagInt
 #define kOscDefaultTypeTagsSysReportSingleSerial kOscTypeTagString
+
+
+#define kOscDefaultTypeTagsSysAuxEnable          kOscTypeTagInt kOscTypeTagInt
+#define kOscDefaultTypeTagsSysAuxDirection       kOscTypeTagInt kOscTypeTagInt
+#define kOscDefaultTypeTagsSysAuxState           kOscTypeTagInt kOscTypeTagInt
+
+#define kOscDefaultTypeTagsSysAuxVersionResponse kOscTypeTagInt
+#define kOscDefaultTypeTagsSysAuxAnalog          kOscTypeTagInt kOscTypeTagFloat
+#define kOscDefaultTypeTagsSysAuxDigital         kOscTypeTagInt kOscTypeTagInt
+#define kOscDefaultTypeTagsSysAuxEncoder         kOscTypeTagInt kOscTypeTagIn
 
 #endif
 

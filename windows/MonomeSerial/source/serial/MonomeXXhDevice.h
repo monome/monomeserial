@@ -53,6 +53,7 @@ public:
 		kDeviceType_256, //16x16
 		kDeviceType_128, //8x16 or 16x8
 		kDeviceType_64,   //8x8
+		kDeviceType_mk,
         kDeviceType_NumTypes
     } DeviceType;
 
@@ -145,6 +146,13 @@ public:
     void MIDILedStateChangeEvent(unsigned char MIDINoteNumber, unsigned char MIDIVelocity);
 
 	void oscTiltEnableStateChangeEvent(bool tiltEnableState); // for the 64 only!
+
+		//mk- aux to device
+	void oscAuxVersionRequestEvent(void);
+	void oscAuxEnableEvent(unsigned int portF, unsigned int portA);
+	void oscAuxDirectionEvent(unsigned int portF, unsigned int portA);
+	void oscAuxStateEvent(unsigned int portF, unsigned int portA);
+	
 
 	float LastTiltX;//added for 64
 	float LastTiltY;//added for 64

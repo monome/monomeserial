@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C064C835-B6AD-4E0E-8119-82D1A0B7C1AD}</ProjectGuid>
+    <RootNamespace>MonomeSerial</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\source\osc\oscpack;$(ProjectDir)\source\osc;$(ProjectDir)\source\midi;$(ProjectDir)\source\serial;$(ProjectDir)\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG_PRINT;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)source\osc\oscpack;$(ProjectDir)source\osc;$(ProjectDir)source\midi;$(ProjectDir)source\serial;$(ProjectDir)soure;$(ProjectDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY "$(ProjectDir)ftd2xx.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)libiconv2.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)libintl3.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)tre4.dll" "$(OutDir)" /Y /b</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(ProjetDir)source\osc\oscpack;$(ProjetDir)source\osc;$(ProjetDir)source\midi;$(ProjetDir)source\serial;$(ProjetDir)source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;ws2_32.lib;ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)source\osc\oscpack;$(ProjectDir)source\osc;$(ProjectDir)source\midi;$(ProjectDir)source\serial;$(ProjectDir)soure;$(ProjectDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>COPY "$(ProjectDir)ftd2xx.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)libiconv2.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)libintl3.dll" "$(OutDir)" /Y /b
+COPY "$(ProjectDir)tre4.dll" "$(OutDir)" /Y /b</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\midi\CCoreMIDI.cpp" />
+    <ClCompile Include="source\midi\CoreMIDITypes.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="source\midi\LongMsg.cpp" />
+    <ClCompile Include="source\midi\MIDIInDevice.cpp" />
+    <ClCompile Include="source\midi\MIDIOutDevice.cpp" />
+    <ClCompile Include="source\midi\ShortMsg.cpp" />
+    <ClCompile Include="source\osc\OscController.cpp" />
+    <ClCompile Include="source\osc\OscException.cc" />
+    <ClCompile Include="source\osc\OscHostAddress.cpp" />
+    <ClCompile Include="source\osc\OscIOController.cpp" />
+    <ClCompile Include="source\osc\OscListenAddress.cpp" />
+    <ClCompile Include="source\osc\OscMessageStream.cpp" />
+    <ClCompile Include="source\osc\oscpack\OscOutboundPacketStream.cpp" />
+    <ClCompile Include="source\osc\oscpack\OscPrintReceivedElements.cpp" />
+    <ClCompile Include="source\osc\oscpack\OscReceivedElements.cpp" />
+    <ClCompile Include="source\osc\oscpack\OscTypes.cpp" />
+    <ClCompile Include="source\osc\oscpack\ip\IpEndpointName.cpp" />
+    <ClCompile Include="source\osc\oscpack\ip\NetworkingUtils.cpp" />
+    <ClCompile Include="source\osc\oscpack\ip\UdpSocket.cpp" />
+    <ClCompile Include="source\serial\AsynchronousSerialDeviceReader.cc" />
+    <ClCompile Include="source\serial\message.cc" />
+    <ClCompile Include="source\serial\message256.cc" />
+    <ClCompile Include="source\serial\messageMK.cc" />
+    <ClCompile Include="source\serial\MonomeDeviceDefaults.cc" />
+    <ClCompile Include="source\serial\MonomeXXhDevice.cc" />
+    <ClCompile Include="source\serial\SerialDevice.cc" />
+    <ClCompile Include="source\ApplicationController.cpp" />
+    <ClCompile Include="source\MonomeRegistry.cpp" />
+    <ClCompile Include="source\MonomeSerial.cpp" />
+    <ClCompile Include="source\MonomeSerialDefaults.cpp" />
+    <ClCompile Include="source\MonomeSerialDlg.cpp" />
+    <ClCompile Include="source\stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\midi\CCoreMIDI.h" />
+    <ClInclude Include="source\midi\CoreMIDITypes.h" />
+    <ClInclude Include="source\midi\LongMsg.h" />
+    <ClInclude Include="source\midi\midi.h" />
+    <ClInclude Include="source\midi\MIDIInDevice.h" />
+    <ClInclude Include="source\midi\MIDIMsg.h" />
+    <ClInclude Include="source\midi\MIDIOutDevice.h" />
+    <ClInclude Include="source\midi\ShortMsg.h" />
+    <ClInclude Include="source\osc\osc.h" />
+    <ClInclude Include="source\osc\OscController.h" />
+    <ClInclude Include="source\osc\OscException.h" />
+    <ClInclude Include="source\osc\OscHostAddress.h" />
+    <ClInclude Include="source\osc\OscIOController.h" />
+    <ClInclude Include="source\osc\OscListenAddress.h" />
+    <ClInclude Include="source\osc\OscMessageStream.h" />
+    <ClInclude Include="source\osc\oscpack\MessageMappingOscPacketListener.h" />
+    <ClInclude Include="source\osc\oscpack\OscException.h" />
+    <ClInclude Include="source\osc\oscpack\OscHostEndianness.h" />
+    <ClInclude Include="source\osc\oscpack\OscOutboundPacketStream.h" />
+    <ClInclude Include="source\osc\oscpack\OscPacketListener.h" />
+    <ClInclude Include="source\osc\oscpack\OscPrintReceivedElements.h" />
+    <ClInclude Include="source\osc\oscpack\OscReceivedElements.h" />
+    <ClInclude Include="source\osc\oscpack\OscTypes.h" />
+    <ClInclude Include="source\osc\oscpack\ip\IpEndpointName.h" />
+    <ClInclude Include="source\osc\oscpack\ip\NetworkingUtils.h" />
+    <ClInclude Include="source\osc\oscpack\ip\PacketListener.h" />
+    <ClInclude Include="source\osc\oscpack\ip\TimerListener.h" />
+    <ClInclude Include="source\osc\oscpack\ip\UdpSocket.h" />
+    <ClInclude Include="source\serial\AsynchronousSerialDeviceReader.h" />
+    <ClInclude Include="source\serial\ftd2xx.h" />
+    <ClInclude Include="source\serial\message.h" />
+    <ClInclude Include="source\serial\message256.h" />
+    <ClInclude Include="source\serial\messageMK.h" />
+    <ClInclude Include="source\serial\MonomeDeviceDefaults.h" />
+    <ClInclude Include="source\serial\MonomeXXhDevice.h" />
+    <ClInclude Include="source\serial\serialdebugger.h" />
+    <ClInclude Include="source\serial\SerialDevice.h" />
+    <ClInclude Include="source\serial\types.h" />
+    <ClInclude Include="source\ApplicationController.h" />
+    <ClInclude Include="source\MonomeRegistry.h" />
+    <ClInclude Include="source\MonomeSerial.h" />
+    <ClInclude Include="source\MonomeSerialDefaults.h" />
+    <ClInclude Include="source\MonomeSerialDlg.h" />
+    <ClInclude Include="source\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\monome_serial.ico" />
+    <None Include="res\MonomeSerial.rc2" />
+    <None Include="source\build info.txt" />
+    <None Include="source\Credits.txt" />
+    <None Include="source\gplheader.txt" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\MonomeSerial.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="MonomeSerial.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

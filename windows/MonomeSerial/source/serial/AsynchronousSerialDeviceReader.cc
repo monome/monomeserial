@@ -29,6 +29,7 @@
 #include "AsynchronousSerialDeviceReader.h"
 #include "Message.h"
 #include "Message256.h"
+#include "messageMK.h"
 #include <sstream>
 #include <stdexcept>
 

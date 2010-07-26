@@ -23,7 +23,9 @@
  */
 //--------------------------------------------
 
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "ApplicationController.h"
 
 #include "serial/message.h"
@@ -207,7 +209,7 @@ ApplicationController::handleSerialDeviceMessageReceivedEvent(MonomeXXhDevice *d
 					return -1;
 			}
 		}
-		else if (device->type() <= MonomeXXhDevice::kDeviceType_64) {//always 2 bytes from 256device {
+		else if (device->type() <= MonomeXXhDevice::kDeviceType_mk) {//always 2 bytes from 256device {
 			switch (messageGetType(*message)) {
 				case kMessageType_256_keydown:
 					handleButtonPressEvent(device, 
@@ -615,6 +617,70 @@ ApplicationController::handleOscMessage(const osc::ReceivedMessage &recmsg)
 		for (i = matchingDevices.begin(); i != matchingDevices.end(); i++)
 			(*i)->oscTiltEnableStateChangeEvent(tiltmode);  		 
 	}
+
+		//mk sys messages, might need to be moved up to handleOsc if they turn out to not be system messages
+	
+	else if (suffix == kOscDefaultAddrPatternAuxVersionSuffix)
+	{
+		
+//		if (atoms->size() > 0)
+//		{
+//			//probably an error, but forgivable
+//#ifdef DEBUG_PRINT
+//			cout << "ApplicationController::handleOscMessage was passed a non-zero atom list with /prefix/aux/version" << endl;
+//#endif
+//		}
+			
+		
+        //bool testState = (*(atoms->begin()))->valueAsInt() ? true : false;
+		
+		for (i = matchingDevices.begin(); i != matchingDevices.end(); i++)
+                (*i)->oscAuxVersionRequestEvent();   
+     
+	}
+	
+	else if (suffix == kOscDefaultAddrPatternAuxEnableSuffix)
+	{
+		//send enable message
+		if (!stream.typetagMatch(kOscDefaultTypeTagsSysAuxEnable))
+			return;
+
+        unsigned int portF = stream.getInt32();
+		unsigned int portA = stream.getInt32();
+		
+        for (i = matchingDevices.begin(); i != matchingDevices.end(); i++)
+            (*i)->oscAuxEnableEvent(portF, portA);
+			
+	}
+	else if (suffix == kOscDefaultAddrPatternAuxDirectionSuffix)
+	{
+		//send direction message
+		if (!stream.typetagMatch(kOscDefaultTypeTagsSysAuxDirection))
+			return;
+
+        unsigned int portF = stream.getInt32();
+		unsigned int portA = stream.getInt32();
+		
+        for (i = matchingDevices.begin(); i != matchingDevices.end(); i++)
+            (*i)->oscAuxDirectionEvent(portF, portA);
+
+	}
+	
+	else if (suffix == kOscDefaultAddrPatternAuxStateSuffix)
+	{
+		//state message
+		if (!stream.typetagMatch(kOscDefaultTypeTagsSysAuxState))
+			return;
+
+        unsigned int portF = stream.getInt32();
+		unsigned int portA = stream.getInt32();
+		
+        for (i = matchingDevices.begin(); i != matchingDevices.end(); i++)
+            (*i)->oscAuxStateEvent(portF, portA);
+
+	}
+
+
 }
 
 void 
@@ -661,7 +727,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 #ifdef DEBUG_PRINT
 	cout << "/sys/prefix message = " << msg.getAddressPattern();
 #endif
-
+		
 	if (addressPattern == kOscDefaultAddrPatternSystemPrefix) {
 		if (msg.typetagMatch(kOscDefaultTypeTagsSysPrefixAll)) {
 			string pre = msg.getString();
@@ -883,6 +949,8 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
     }
     else if (addressPattern == kOscDefaultAddrPatternSystemReport) {
 
+		OscHostRef oscHost = _oscController.getOscHostRef(_oscHostAddressString, _oscHostPort,false);
+
 		if (msg.argumentCount() == 0) {
 			char buffer[OUTPUT_BUFFER_SIZE];
 			osc::OutboundPacketStream packet( buffer, OUTPUT_BUFFER_SIZE );
@@ -891,7 +959,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 			packet << osc::BeginMessage( kOscDefaultAddrPatternSystemNumDevices ) 
 			  << (int)numberOfDevices() << osc::EndMessage;
 
-			_oscController.send(device->OscHostRef(), packet);
+			_oscController.send(oscHost, packet);
 
 
 			// send /sys/prefix messages
@@ -908,7 +976,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< device->oscAddressPatternPrefix().c_str() 
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 			}
 
 			// send /sys/type messages
@@ -935,6 +1003,9 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					case MonomeXXhDevice::kDeviceType_256:
 						deviceType = kOscDeviceType256;
 						break;
+					case MonomeXXhDevice::kDeviceType_mk:
+						deviceType = kOscDeviceTypeMK;
+						break;
 				}
 
 				if (!deviceType) {
@@ -946,7 +1017,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< deviceType
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 			}
 
 			// send /sys/cable messages
@@ -984,7 +1055,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< deviceOrientation
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 			}
 
 			// send /sys/offset messages
@@ -1002,7 +1073,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< (int)device->oscStartRow()
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 			}
 
 			// send /sys/serial messages
@@ -1019,7 +1090,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< device->serialNumber().c_str()
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 			}
 		}
 		else {
@@ -1044,7 +1115,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< device->oscAddressPatternPrefix().c_str() 
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
 
 
 				// send /sys/type messages
@@ -1065,6 +1136,9 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					case MonomeXXhDevice::kDeviceType_256:
 						deviceType = kOscDeviceType256;
 						break;
+					case MonomeXXhDevice::kDeviceType_mk:
+						deviceType = kOscDeviceTypeMK;
+						break;
 				}
 
 				if (deviceType) {
@@ -1072,7 +1146,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 						<< deviceType
 						<< osc::EndMessage;
 
-					_oscController.send(device->OscHostRef(), packet);
+					_oscController.send(oscHost, packet);
 				}
 
 
@@ -1101,7 +1175,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 						<< deviceOrientation
 						<< osc::EndMessage;
 
-					_oscController.send(device->OscHostRef(), packet);
+					_oscController.send(oscHost, packet);
 				}
 
 
@@ -1113,7 +1187,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 						<< (int)device->oscStartRow()
 						<< osc::EndMessage;
 
-					_oscController.send(device->OscHostRef(), packet);
+					_oscController.send(oscHost, packet);
 
 				// send /sys/serial messages
 				packet.Clear();
@@ -1122,7 +1196,7 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
 					<< device->serialNumber().c_str()
 					<< osc::EndMessage;
 
-				_oscController.send(device->OscHostRef(), packet);
+				_oscController.send(oscHost, packet);
             }
         }
     }

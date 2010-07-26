@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="libraries">
+      <UniqueIdentifier>{9c8bd006-b4c8-4f1b-b89f-79a66b90c14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\midi">
+      <UniqueIdentifier>{41b6be22-3e2e-4726-871c-a8c4232b91e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\midi\sanford midiwrapper">
+      <UniqueIdentifier>{a9fb0278-56b7-40be-aee7-950cc8dacda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\osc">
+      <UniqueIdentifier>{2b698bb4-c50e-4795-9cbf-58bd47f0271d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\osc\oscpack">
+      <UniqueIdentifier>{f6595213-fcfd-4275-acd2-1a75bc954531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\osc\oscpack\ip">
+      <UniqueIdentifier>{2e702750-1f58-4338-ad9a-0404b55194b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\serial">
+      <UniqueIdentifier>{25006139-ab6a-4b2d-a018-6a38d430ce3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{56015dc2-3d0b-4e35-bd10-b64cf1b201af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Application\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Application\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{4148f897-5db0-45f2-8505-c7b8a730e814}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\midi\CCoreMIDI.cpp">
+      <Filter>libraries\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="source\midi\CoreMIDITypes.cpp">
+      <Filter>libraries\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="source\midi\LongMsg.cpp">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="source\midi\MIDIInDevice.cpp">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="source\midi\MIDIOutDevice.cpp">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="source\midi\ShortMsg.cpp">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscController.cpp">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscException.cc">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscHostAddress.cpp">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscIOController.cpp">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscListenAddress.cpp">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\OscMessageStream.cpp">
+      <Filter>libraries\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\OscOutboundPacketStream.cpp">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\OscPrintReceivedElements.cpp">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\OscReceivedElements.cpp">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\OscTypes.cpp">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\ip\IpEndpointName.cpp">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\ip\NetworkingUtils.cpp">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="source\osc\oscpack\ip\UdpSocket.cpp">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\AsynchronousSerialDeviceReader.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\message.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\message256.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\MonomeDeviceDefaults.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\MonomeXXhDevice.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\SerialDevice.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ApplicationController.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MonomeRegistry.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MonomeSerial.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MonomeSerialDefaults.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MonomeSerialDlg.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stdafx.cpp">
+      <Filter>Application\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\serial\messageMK.cc">
+      <Filter>libraries\serial</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\midi\CCoreMIDI.h">
+      <Filter>libraries\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\CoreMIDITypes.h">
+      <Filter>libraries\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\LongMsg.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\midi.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\MIDIInDevice.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\MIDIMsg.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\MIDIOutDevice.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\midi\ShortMsg.h">
+      <Filter>libraries\midi\sanford midiwrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\osc.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscController.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscException.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscHostAddress.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscIOController.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscListenAddress.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\OscMessageStream.h">
+      <Filter>libraries\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\MessageMappingOscPacketListener.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscException.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscHostEndianness.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscOutboundPacketStream.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscPacketListener.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscPrintReceivedElements.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscReceivedElements.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\OscTypes.h">
+      <Filter>libraries\osc\oscpack</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\ip\IpEndpointName.h">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\ip\NetworkingUtils.h">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\ip\PacketListener.h">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\ip\TimerListener.h">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="source\osc\oscpack\ip\UdpSocket.h">
+      <Filter>libraries\osc\oscpack\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\AsynchronousSerialDeviceReader.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\ftd2xx.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\message.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\message256.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\MonomeDeviceDefaults.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\MonomeXXhDevice.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\serialdebugger.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\SerialDevice.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\types.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ApplicationController.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MonomeRegistry.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MonomeSerial.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MonomeSerialDefaults.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MonomeSerialDlg.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stdafx.h">
+      <Filter>Application\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\serial\messageMK.h">
+      <Filter>libraries\serial</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\monome_serial.ico">
+      <Filter>Application\Resource Files</Filter>
+    </None>
+    <None Include="res\MonomeSerial.rc2">
+      <Filter>Application\Resource Files</Filter>
+    </None>
+    <None Include="source\build info.txt">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="source\Credits.txt">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="source\gplheader.txt">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="ReadMe.txt">
+      <Filter>misc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\MonomeSerial.rc">
+      <Filter>Application\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

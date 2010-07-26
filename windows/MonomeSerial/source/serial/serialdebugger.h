@@ -5,6 +5,7 @@
 #include <iostream>
 #include "message.h"
 #include "message256.h"
+#include "messageMK.h"
 #include "MonomeXXhDevice.h"
 
 using namespace std;

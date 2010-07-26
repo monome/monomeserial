@@ -20,6 +20,7 @@
 #include "MonomeXXhDevice.h"
 #include "message.h"
 #include "message256.h"
+#include "messageMK.h"
 #include <cstdlib>
 
 #ifdef DEBUG_PRINT
@@ -97,19 +98,22 @@ MonomeXXhDevice::MonomeXXhDevice(const string& serialNumber)
 		
 	if (serialNumber[1] == '4') //40h
 	  _type = kDeviceType_40h;//kDeviceType_256 kDeviceType_40h;  //change temp to work on 256
-		else if(serialNumber[1] == '2') //256
+	else if(serialNumber[1] == '2') //256
 		_type = kDeviceType_256;
-			else if(serialNumber[1] == '1') //128
-				_type = kDeviceType_128;
-					else if(serialNumber[1] == '6') //64
-						_type = kDeviceType_64;
+	else if(serialNumber[1] == '1') //128
+		_type = kDeviceType_128;
+	else if(serialNumber[1] == '6') //64
+		_type = kDeviceType_64;
+	else if(serialNumber[1] == 'k') //k for kit -- all others are m40h, m64, etc, kit is just mk, not mmk
+		_type = kDeviceType_mk;
+
 	#ifdef DEBUG_PRINT
 					else fprintf(stderr, "***WARNING- NEW MONOME DEVICE IS OF UNKNOWN TYPE \n", serialNumber.c_str());
 	#endif	
 
 switch (_type)
-	{ 
-	 case kDeviceType_40h:
+{ 
+case kDeviceType_40h:
 	 _columns = _rows = 8; 
 	 _oscAddressPatternPrefix = "/40h"; // this should be some #defined value
 		#ifdef DEBUG_PRINT
@@ -156,7 +160,16 @@ switch (_type)
 			fprintf(stderr, "** m64 has been detected! \n", serialNumber.c_str());
 		#endif		
 	 break;
-	}
+	
+
+	case kDeviceType_mk:
+	 _columns = _rows = 16; 
+	 _oscAddressPatternPrefix = "/mk"; // this should be some #defined value
+	 	#ifdef DEBUG_PRINT
+			fprintf(stderr, "** mk has been detected! \n", serialNumber.c_str());
+		#endif	
+	break;
+}
 
 
 	InitializeCriticalSection(&_lock);
@@ -606,7 +619,7 @@ MonomeXXhDevice::oscLedStateChangeEvent(unsigned int column, unsigned int row, b
 		messagePackLedStateChange(&message, state ? 1 : 0, column, row);	
 		write((char *)&message, sizeof(t_message));
 		}
-	else  if (_type <= kDeviceType_64) {//256 128 64
+	else  if (_type <= kDeviceType_mk) {//256 128 64 mk
 		t_message message;
 		if (state == 1) messagePack_256_led_on(&message, column, row);
 		else messagePack_256_led_off(&message, column, row);
@@ -632,7 +645,7 @@ MonomeXXhDevice::oscLedIntensityChangeEvent(float intensity) //m256
 		write((char *)&message, sizeof(t_message));
 	}
 
-	else if (_type <= kDeviceType_64) {//256 128 64  
+	else if (_type <= kDeviceType_mk) {//256 128 64 mk  
 		t_256_1byte_message message;
 		messagePack_256_intensity(&message, i);
 		write((char *)&message, sizeof(t_256_1byte_message));
@@ -754,7 +767,7 @@ MonomeXXhDevice::oscLedRowStateChangeEvent(unsigned int row, unsigned int numBit
 
 		write((char *)&message, sizeof(t_message));    
 	}//40h
-	else if (_type <= kDeviceType_64) // 256, 128 and 64
+	else if (_type <= kDeviceType_mk) // 256, 128, 64 and mk
 	{
 		// 1-byte row command:
 		//	- 64 -> always use this, since there is only 1 byte-row
@@ -854,7 +867,7 @@ MonomeXXhDevice::oscLedColumnStateChangeEvent(unsigned int column, unsigned int 
 
 		write((char *)&message, sizeof(t_message));    
 	}//40h
-	else if (_type <= kDeviceType_64) // 256, 128 and 64
+	else if (_type <= kDeviceType_mk) // 256, 128, 64 and mk
 	{
 		// 1-byte col command:
 		//	- 64 -> always use this, since there is only 1 byte-col
@@ -1194,10 +1207,44 @@ MonomeXXhDevice::MIDILedStateChangeEvent(unsigned char MIDINoteNumber, unsigned 
 		messagePackLedStateChange(&message, MIDIVelocity ? 1 : 0, column, row);
 	}
 	// fixed by steve -> new devices have a seperate led on and off serial command, 40h has 1 command with on/off as 
-	else  if (_type <= kDeviceType_64) { //256 128 64
+	else  if (_type <= kDeviceType_mk) { //256 128 64 mk
 		if (MIDIVelocity > 0) messagePack_256_led_on(&message, column, row);
 		else messagePack_256_led_off(&message, column, row);
 	}
  
     write((char *)&message, sizeof(t_message));
+}
+
+
+//	//mk- aux to device
+void 
+MonomeXXhDevice::oscAuxVersionRequestEvent(void)
+{
+	t_mk_3byte_message message;
+	
+	if (_type != kDeviceType_mk) return;
+	
+
+	messagePack_mk_auxin(&message, kMessage_AuxIn_Version, 0, 0);
+	write((char*)&message, sizeof(t_mk_3byte_message));
+		
+}
+void
+MonomeXXhDevice::oscAuxEnableEvent(unsigned int portF, unsigned int portA)
+{
+	t_mk_3byte_message message;
+	
+	if (_type != kDeviceType_mk) return;
+	
+	
+    messagePack_mk_auxin(&message, kMessage_AuxIn_Enable, portF, portA);
+    write((char *)&message, sizeof(t_mk_3byte_message));
+}
+void MonomeXXhDevice::oscAuxDirectionEvent(unsigned int portF, unsigned int portA)
+{
+	
+}
+void MonomeXXhDevice::oscAuxStateEvent(unsigned int portF, unsigned int portA)
+{
+	
 }

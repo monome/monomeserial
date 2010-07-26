@@ -25,7 +25,9 @@
 
 // this file is created for Windows only by Daniel Battaglia
 
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "MonomeRegistry.h"
 #include <list>
 

@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonomeSerial", "MonomeSerial\MonomeSerial.vcproj", "{C064C835-B6AD-4E0E-8119-82D1A0B7C1AD}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonomeSerial", "MonomeSerial\MonomeSerial.vcxproj", "{C064C835-B6AD-4E0E-8119-82D1A0B7C1AD}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MonomeSerialSetup", "MonomeSerialSetup\MonomeSerialSetup.vdproj", "{F1867488-A0CD-4BF5-9053-4A41B1AF4EED}"
 EndProject

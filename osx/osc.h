@@ -74,6 +74,9 @@
 #define kOscDefaultAddrPatternSystemReport       "/sys/report"
 #define kOscDefaultAddrPatternSystemNumDevices  "/sys/devices"
 
+
+#define kOscDefaultAddrPatternSystemGrids		 "/sys/grids"
+
 #define kOscDefaultAddrPatternSystemAuxVersion   "/sys/aux/version"
 //auxout
 #define kOscDefaultAddrPatternSystemAuxAnalog    "/sys/aux/analog"
@@ -94,6 +97,7 @@
 #define kOscDefaultAddrPatternAuxEnableSuffix    "/aux/enable"
 #define kOscDefaultAddrPatternAuxDirectionSuffix "/aux/direction"
 #define kOscDefaultAddrPatternAuxStateSuffix     "/aux/state"
+
 
 
 #define kOscDefaultTypeTagsButtonPress        kOscTypeTagInt kOscTypeTagInt kOscTypeTagInt
@@ -122,6 +126,8 @@
 #define kOscDefaultTypeTagsSysLedTestAll         kOscDefaultTypeTagsLedTest
 #define kOscDefaultTypeTagsSysLedTestSingle      kOscTypeTagInt kOscDefaultTypeTagsLedTest
 #define kOscDefaultTypeTagsSysReportSingle       kOscTypeTagInt
+
+#define kOscDefaultTypeTagsSysGrids				 kOscTypeTagInt
 
 #define kOscDefaultTypeTagsSysAuxEnable          kOscTypeTagInt kOscTypeTagInt
 #define kOscDefaultTypeTagsSysAuxDirection       kOscTypeTagInt kOscTypeTagInt

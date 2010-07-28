@@ -145,6 +145,8 @@ public:
 	void oscAuxDirectionEvent(unsigned int portF, unsigned int portA);
 	void oscAuxStateEvent(unsigned int portF, unsigned int portA);
 	
+	void oscGridsEvent(unsigned int nGrids);
+	
 	
      
 	 void oscTiltEnableStateChangeEvent(bool tiltEnableState);

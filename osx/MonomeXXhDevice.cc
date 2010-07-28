@@ -88,13 +88,16 @@ char name[8];
 			  	  
 		
 	if (name[1] == '4') //40h
-	  _type = kDeviceType_40h;//kDeviceType_256 kDeviceType_40h;  //change temp to work on 256
-		else if(name[1] == '2') //256
+		_type = kDeviceType_40h;//kDeviceType_256 kDeviceType_40h;  //change temp to work on 256
+	else if(name[1] == '2') //256
 		_type = kDeviceType_256;//Ω;kDeviceType_256;
-			else if(name[1] == '1') //128
-				_type = kDeviceType_128;
-					else if(name[1] == '6') //64
-						_type = kDeviceType_64;
+	else if(name[1] == '1') //128
+		_type = kDeviceType_128;
+	else if(name[1] == '6') //64
+		_type = kDeviceType_64;
+	else if(name[1] == 'k') //mk (other devices are m40h, m64, etc, mk is just mk, so look for 'k', not m)
+		_type = kDeviceType_mk;
+	
 	#ifdef _DEBUG_NEW_DEVICE_
 	else fprintf(stderr, "***WARNING- NEW MONOME DEVICE IS OF UNKNOWN TYPE \n", name);
 #endif						
@@ -1298,3 +1301,15 @@ void MonomeXXhDevice::oscAuxStateEvent(unsigned int portF, unsigned int portA)
 	
 }
 
+//mk grids
+void
+MonomeXXhDevice::oscGridsEvent(unsigned int nGrids)
+{
+	t_mk_1byte_message message;
+	
+	if (_type != kDeviceType_mk) return;
+	
+	messagePack_mk_grids(&message, nGrids);
+	write((char*)&message, sizeof(t_mk_1byte_message));
+	
+}

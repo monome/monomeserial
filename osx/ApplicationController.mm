@@ -844,6 +844,7 @@ unsigned int stateout =5;
         for (deviceIter = matchingDevices.begin(); deviceIter != matchingDevices.end(); deviceIter++)
             (*deviceIter)->oscAuxStateEvent(portF, portA);
 	}
+
 }
 
 void 
@@ -1165,6 +1166,9 @@ ApplicationController::_handleOscSystemMessage(const string& addressPattern, lis
 					case MonomeXXhDevice::kDeviceType_64:
 						(*k).setValue("64");
 						break;
+					case MonomeXXhDevice::kDeviceType_mk:
+						(*k).setValue("mk");
+						break;
 					default:
 						(*k).setValue("unknown device");
 						break;
@@ -1235,8 +1239,19 @@ ApplicationController::_handleOscSystemMessage(const string& addressPattern, lis
                 _oscController.send(_oscHostRef, offsetString, &threeAtoms);
             }
         }
-    }
-	
+
+    } else if (addressPattern == kOscDefaultAddrPatternSystemGrids)
+	{
+		if (_typeCheckOscAtoms(*atoms, kOscDefaultTypeTagsSysGrids))
+		{
+			
+			unsigned int numGrids = (*atoms->begin())->valueAsInt();
+			
+			for (i = _devices.begin(); i != _devices.end(); i++) 
+                (*i)->oscGridsEvent(numGrids);
+						
+		}
+	}
 }
 
 

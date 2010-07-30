@@ -681,6 +681,7 @@ ApplicationController::handleOscMessage(const osc::ReceivedMessage &recmsg)
 	}
 
 
+
 }
 
 void 
@@ -947,6 +948,19 @@ ApplicationController::_handleOscSystemMessage(OscMessageStream msg)
             device->oscLedTestStateChangeEvent(state);
         }
     }
+	else if (addressPattern == kOscDefaultAddrPatternSystemGrids)
+	{
+		if (msg.typetagMatch(kOscDefaultTypeTagsSysGrids))
+		{
+			int numGrids = msg.getInt32();
+
+			for (i = _devices.begin(); i != _devices.end(); i++)
+			{
+				(*i)->oscGridsEvent(numGrids);
+			}
+		}
+	}
+
     else if (addressPattern == kOscDefaultAddrPatternSystemReport) {
 
 		OscHostRef oscHost = _oscController.getOscHostRef(_oscHostAddressString, _oscHostPort,false);

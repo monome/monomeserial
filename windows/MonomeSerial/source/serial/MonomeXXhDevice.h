@@ -152,6 +152,8 @@ public:
 	void oscAuxEnableEvent(unsigned int portF, unsigned int portA);
 	void oscAuxDirectionEvent(unsigned int portF, unsigned int portA);
 	void oscAuxStateEvent(unsigned int portF, unsigned int portA);
+
+	void oscGridsEvent(unsigned int nGrids);
 	
 
 	float LastTiltX;//added for 64

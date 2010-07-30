@@ -2,28 +2,28 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="libraries">
-      <UniqueIdentifier>{9c8bd006-b4c8-4f1b-b89f-79a66b90c14c}</UniqueIdentifier>
+      <UniqueIdentifier>{0bcc9b7e-e7b7-43c3-9f4f-f7da4e530a22}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\midi">
-      <UniqueIdentifier>{41b6be22-3e2e-4726-871c-a8c4232b91e5}</UniqueIdentifier>
+      <UniqueIdentifier>{98cc436e-fdad-49ae-9d38-3acbe60b301f}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\midi\sanford midiwrapper">
-      <UniqueIdentifier>{a9fb0278-56b7-40be-aee7-950cc8dacda8}</UniqueIdentifier>
+      <UniqueIdentifier>{17c94786-f044-4944-a165-4c52aa59ad61}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\osc">
-      <UniqueIdentifier>{2b698bb4-c50e-4795-9cbf-58bd47f0271d}</UniqueIdentifier>
+      <UniqueIdentifier>{6f3737c0-ce29-4c50-a930-8600c06e5070}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\osc\oscpack">
-      <UniqueIdentifier>{f6595213-fcfd-4275-acd2-1a75bc954531}</UniqueIdentifier>
+      <UniqueIdentifier>{4e16117a-393c-49a1-9fd7-53a8266970b1}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\osc\oscpack\ip">
-      <UniqueIdentifier>{2e702750-1f58-4338-ad9a-0404b55194b0}</UniqueIdentifier>
+      <UniqueIdentifier>{dd785d02-66e9-4927-8de5-6f0b9ff3d9cf}</UniqueIdentifier>
     </Filter>
     <Filter Include="libraries\serial">
-      <UniqueIdentifier>{25006139-ab6a-4b2d-a018-6a38d430ce3b}</UniqueIdentifier>
+      <UniqueIdentifier>{fd6eb353-4b17-4ff4-9b23-36aeeb9ac5cf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Application">
-      <UniqueIdentifier>{56015dc2-3d0b-4e35-bd10-b64cf1b201af}</UniqueIdentifier>
+      <UniqueIdentifier>{552fcc9e-d0ed-4166-b211-2b6f58066232}</UniqueIdentifier>
     </Filter>
     <Filter Include="Application\Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
@@ -38,7 +38,7 @@
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="misc">
-      <UniqueIdentifier>{4148f897-5db0-45f2-8505-c7b8a730e814}</UniqueIdentifier>
+      <UniqueIdentifier>{9bfb7285-c787-4346-9716-1015c81cb2cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

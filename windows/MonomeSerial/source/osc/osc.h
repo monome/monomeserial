@@ -83,6 +83,8 @@
 #define kOscDefaultAddrPatternSystemDevType		 "/sys/type"
 #define kOscDefaultAddrPatternSystemDevSerial	 "/sys/serial"
 
+#define kOscDefaultAddrPatternSystemGrids		 "/sys/grids"
+
 
 #define kOscDefaultAddrPatternSystemAuxVersion   "/sys/aux/version"
 //auxout
@@ -157,6 +159,7 @@
 #define kOscDefaultTypeTagsSysReportSingle       kOscTypeTagInt
 #define kOscDefaultTypeTagsSysReportSingleSerial kOscTypeTagString
 
+#define kOscDefaultTypeTagsSysGrids				 kOscTypeTagInt
 
 #define kOscDefaultTypeTagsSysAuxEnable          kOscTypeTagInt kOscTypeTagInt
 #define kOscDefaultTypeTagsSysAuxDirection       kOscTypeTagInt kOscTypeTagInt

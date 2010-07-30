@@ -1248,3 +1248,14 @@ void MonomeXXhDevice::oscAuxStateEvent(unsigned int portF, unsigned int portA)
 {
 	
 }
+
+void
+MonomeXXhDevice::oscGridsEvent(unsigned int nGrids)
+{
+	t_mk_1byte_message message;
+	
+	if (_type != kDeviceType_mk) return;
+	
+	messagePack_mk_grids(&message, nGrids);
+	write((char*)&message, sizeof(t_mk_1byte_message));
+}

@@ -27,13 +27,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5A6714F0C8CFD157B15AC5688F8A3466"
+        "OwnerKey" = "8:_39E7772217364A07A0830C4A484E4068"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5B7B376B61F258F2500DC976CC97EFF1"
+        "OwnerKey" = "8:_39E7772217364A07A0830C4A484E4068"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_607FD27FE9C84296B01A1E76DEC9043D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_96E9DB08020FB4B298AA8B5B464E2595"
+        "MsmKey" = "8:_A1576FB44009ED922570EABFF515DA58"
+        "OwnerKey" = "8:_39E7772217364A07A0830C4A484E4068"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BF429BF041D8B572B22267D734E7C493"
+        "OwnerKey" = "8:_39E7772217364A07A0830C4A484E4068"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F5E057BD272E2D89294548CDFF58E44A"
         "OwnerKey" = "8:_39E7772217364A07A0830C4A484E4068"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -144,6 +168,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A6714F0C8CFD157B15AC5688F8A3466"
+            {
+            "SourcePath" = "8:FTD2XX.dll"
+            "TargetName" = "8:FTD2XX.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_B01D90B85A104FC6B1575DBEBB148AF3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5B7B376B61F258F2500DC976CC97EFF1"
+            {
+            "SourcePath" = "8:COMDLG32.dll"
+            "TargetName" = "8:COMDLG32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_B01D90B85A104FC6B1575DBEBB148AF3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_607FD27FE9C84296B01A1E76DEC9043D"
             {
             "SourcePath" = "8:..\\MonomeSerial\\res\\monome_serial.ico"
@@ -164,10 +228,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96E9DB08020FB4B298AA8B5B464E2595"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A1576FB44009ED922570EABFF515DA58"
             {
-            "SourcePath" = "8:FTD2XX.dll"
-            "TargetName" = "8:FTD2XX.dll"
+            "SourcePath" = "8:OLEACC.dll"
+            "TargetName" = "8:OLEACC.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_B01D90B85A104FC6B1575DBEBB148AF3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF429BF041D8B572B22267D734E7C493"
+            {
+            "SourcePath" = "8:MSIMG32.dll"
+            "TargetName" = "8:MSIMG32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_B01D90B85A104FC6B1575DBEBB148AF3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F5E057BD272E2D89294548CDFF58E44A"
+            {
+            "SourcePath" = "8:IMM32.dll"
+            "TargetName" = "8:IMM32.dll"
             "Tag" = "8:"
             "Folder" = "8:_B01D90B85A104FC6B1575DBEBB148AF3"
             "Condition" = "8:"
@@ -274,8 +378,9 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Monome Serial 0.2.1.5"
         "ProductCode" = "8:{D458E704-814E-4277-9D23-02089080D9E8}"
-        "PackageCode" = "8:{2C75BB6C-77A4-4A8D-B73B-4A99B724118C}"
+        "PackageCode" = "8:{0B283398-743F-4EBE-A435-3B6B2C7DC802}"
         "UpgradeCode" = "8:{94A02EAB-E283-4461-8289-78B1376EE97E}"
+        "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
@@ -395,7 +500,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_497BAF4CE9D74CBB890F1C3CEE79BC61"
             {
-            "Name" = "8:MonomeSerial 0.2.1.5"
+            "Name" = "8:MonomeSerial 0.3.0.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -409,7 +514,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_64530973F721497A946F926D378D1461"
             {
-            "Name" = "8:MonomeSerial 0.2.1.5"
+            "Name" = "8:MonomeSerial 0.3.0.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

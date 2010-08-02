@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -131,8 +129,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,2,1,5
- PRODUCTVERSION 0,2,1,5
+ FILEVERSION 0,3,0,0
+ PRODUCTVERSION 0,3,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -150,12 +148,12 @@ BEGIN
             VALUE "Comments", "OSC/MIDI router for Monome Serial Devices."
             VALUE "CompanyName", "Monome"
             VALUE "FileDescription", "MonomeSerial"
-            VALUE "FileVersion", "0.2.1.5"
+            VALUE "FileVersion", "0.3.0.0"
             VALUE "InternalName", "MonomeSerial.exe"
             VALUE "LegalCopyright", "(c) Monome.  All rights reserved."
             VALUE "OriginalFilename", "MonomeSerial.exe"
             VALUE "ProductName", "MonomeSerial"
-            VALUE "ProductVersion", "0.2.1.5"
+            VALUE "ProductVersion", "0.3.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -171,7 +169,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_MONOMESERIAL_DIALOG, DIALOG
     BEGIN
@@ -231,7 +229,7 @@ END
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_PREFIX              "Address Pattern Prefix :"
     IDS_COL                 "Starting Column :"
@@ -244,7 +242,7 @@ BEGIN
     IDS_OUTCHANNEL          "Output Channel :"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -1745,7 +1745,7 @@ ApplicationController::_typeCheckRowOrColumnMessage(OscMessageStream msg)
 	if (msg.argumentCount() < 2)
         return false;
 
-	return msg.typetagMatch("ii");
+	return msg.typetagMatch("ii") || msg.typetagMatch("iii");
 }
 
 void 

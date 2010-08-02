@@ -269,8 +269,8 @@ BOOL CMonomeSerialDlg::OnInitDialog()
 
 	hostSpin.SetRange32(0, 9999);
 	listenSpin.SetRange32(0, 9999);
-	colSpin.SetRange32(0, 32767);
-	rowSpin.SetRange32(0, 32767);
+	colSpin.SetRange32(-32768, 32767);
+	rowSpin.SetRange32(-32768, 32767);
 	adcSpin.SetRange32(0, 32767);
 	encSpin.SetRange32(0, 32767);
 	inChanSpin.SetRange32(1, 16);

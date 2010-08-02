@@ -2,7 +2,7 @@ Monome Serial XP by Daniel Battaglia
 ------------------------------------------
 
 Initial Monome Serial OSX application:
-- Joe Lake, Brian Crabtree, Daniel Battaglia, Steve Duda
+- Joe Lake, Brian Crabtree, Daniel Battaglia, Steve Duda, Kevin Nelson
 
 Various free/open-source libraries, toolkits and code used for this Win32 port (these are all great and highly recommended):
 
@@ -26,3 +26,11 @@ If you need any help or have any questions, feel free to write me:
 
 -Daniel Battaglia
 - kid_sputnik@yahoo.com.
+
+
+--
+Modifications for 2010 mk devices by Kevin Nelson.
+Questions should probably be directed to both Daniel and me.
+
+-Kevin Nelson
+- kevin@soundcyst.com

@@ -137,7 +137,7 @@ public:
     void oscLedColumnStateChangeEvent(unsigned int column, unsigned int numBitMaps, unsigned int bitMaps[]);
     void oscAdcEnableStateChangeEvent(unsigned int localAdcIndex, bool adcEnableState);
     void oscEncEnableStateChangeEvent(unsigned int localEncIndex, bool encEnableState);
-    void oscLedFrameEvent(unsigned int column, unsigned int row, unsigned int bitMaps[8]);
+    void oscLedFrameEvent(unsigned int column, unsigned int row, unsigned char bitMaps[8]);
 	
 	//mk- aux to device
 	void oscAuxVersionRequestEvent(void);

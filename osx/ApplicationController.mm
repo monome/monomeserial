@@ -741,10 +741,10 @@ unsigned int stateout =5;
     else if (suffix == kOscDefaultAddrPatternLedFrameSuffix) {
         if (_typeCheckOscAtoms(*atoms, kOscDefaultTypeTagsLedFrame)) { // 8 Ints
             unsigned int index;
-            unsigned int bitmap[8];
+            unsigned char bitmap[8];
 
             for (index = 0, atomIter = atoms->begin(); atomIter != atoms->end(); atomIter++, index++)
-                bitmap[index] = (*atomIter)->valueAsInt();
+                bitmap[index] = (char) (*atomIter)->valueAsInt();	//possibly cast this as char here to be serial compatible
 
             for (deviceIter = matchingDevices.begin(); deviceIter != matchingDevices.end(); deviceIter++)
                 (*deviceIter)->oscLedFrameEvent(0, 0, bitmap);        
@@ -752,13 +752,13 @@ unsigned int stateout =5;
 		
         else if (_typeCheckOscAtoms(*atoms, kOscDefaultTypeTagsLedOffsetFrame)) { // 10 Ints, first 2 for offset
             unsigned int column, row, index;
-            unsigned int bitmap[8];
+            unsigned char bitmap[8];
 
             column = (*(atomIter = atoms->begin())++)->valueAsInt();
             row = (*atomIter++)->valueAsInt();
 
             for (index = 0; atomIter != atoms->end(); atomIter++, index++)
-                bitmap[index] = (*atomIter)->valueAsInt();
+                bitmap[index] = (char) (*atomIter)->valueAsInt();
 
             for (deviceIter = matchingDevices.begin(); deviceIter != matchingDevices.end(); deviceIter++)
                 (*deviceIter)->oscLedFrameEvent(column, row, bitmap);        
@@ -766,13 +766,13 @@ unsigned int stateout =5;
 
 		        else if (_typeCheckOscAtoms(*atoms, kOscDefaultTypeTagsLedOffsetFrame)) { // 2 ints, must assume its 
             unsigned int column, row, index;
-            unsigned int bitmap[8];
+            unsigned char bitmap[8];
 
             column = (*(atomIter = atoms->begin())++)->valueAsInt();
             row = (*atomIter++)->valueAsInt();
 
             for (index = 0; atomIter != atoms->end(); atomIter++, index++)
-                bitmap[index] = (*atomIter)->valueAsInt();
+                bitmap[index] = (char) (*atomIter)->valueAsInt();
 
             for (deviceIter = matchingDevices.begin(); deviceIter != matchingDevices.end(); deviceIter++)
                 (*deviceIter)->oscLedFrameEvent(column, row, bitmap);        

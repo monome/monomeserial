@@ -968,7 +968,7 @@ MonomeXXhDevice::oscLedColumnStateChangeEvent(unsigned int column, unsigned int 
 }
 
 void
-MonomeXXhDevice::oscLedFrameEvent(unsigned int column, unsigned int row, unsigned int bitMaps[8])
+MonomeXXhDevice::oscLedFrameEvent(unsigned int column, unsigned int row, unsigned char bitMaps[8])
 {
 	unsigned char map[8], rmap[8];
 	unsigned int i, shift;

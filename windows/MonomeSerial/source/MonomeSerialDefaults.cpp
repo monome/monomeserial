@@ -166,6 +166,14 @@ MonomeSerialDefaults::setDeviceStateFromDefaults(MonomeXXhDevice *device)
 				defaults->setDeviceStateFromDefaults(device);
 		}
 		break;
+	case MonomeXXhDevice::kDeviceType_mk:	
+		 for (i = 0; i < _MonomeALLDefaults.size(); i++)
+		 {
+			MonomeDeviceDefaults *defaults = _MonomeALLDefaults[i];
+			if (defaults != 0 && strncmp(device->serialNumber().c_str(), defaults->serialNumber(), kMonomeXXhDevice_SerialNumberLength) == 0)
+				defaults->setDeviceStateFromDefaults(device);
+		}
+		break;
 	}
 }
 

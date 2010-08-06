@@ -137,6 +137,38 @@ ApplicationController::handleSerialDeviceDiscoveredEvent(const string& serialNum
 
     _defaults->setDeviceStateFromDefaults(device);
 
+	// Port toggle on open fix.
+	if (device->OscHostRef() == 0)
+	{
+		string oscHostPortString = CMonomeSerialDlg::IntToString(device->OscHostPort());
+
+		OscHostRef newHostRef = 0;
+		newHostRef = _oscController.getOscHostRef(device->OscHostAddress(), oscHostPortString, false);
+
+		//if (newHostRef == 0) { // changed from throwing -1 to std::exception (why wasn't this done originally?)
+		//	throw std::exception("Invalid OSC Host Port or Address string");
+		//}
+
+		device->setOscHostRef(newHostRef);
+	}
+    
+	if (device->OscListenRef() == 0)
+	{
+		string oscListenPortString = CMonomeSerialDlg::IntToString(device->OscListenPort());
+
+		OscHostRef newListenRef = 0;
+		newListenRef = _oscController.getOscListenRef(oscListenPortString, false);
+
+		//if (newHostRef == 0) { // changed from throwing -1 to std::exception (why wasn't this done originally?)
+		//	throw std::exception("Invalid OSC Host Port or Address string");
+		//}
+
+		device->setOscListenRef(newListenRef);
+	}
+    
+
+
+
     _devices.push_back(device);
 
     _deviceReader.addSerialDevice(device, device->messageSize(), _ApplicationController_SerialDeviceMessageReceivedCallback, this);

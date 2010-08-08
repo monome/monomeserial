@@ -207,7 +207,7 @@ ApplicationController::handleSerialDeviceMessageReceivedEvent(MonomeXXhDevice *d
             i += device->messageSize();
         }
     }
-	else  if (device->type() <= MonomeXXhDevice::kDeviceType_64) //always 2 bytes from 256device
+	else  if (device->type() <= MonomeXXhDevice::kDeviceType_mk) //always 2 bytes from 256device
 	 {
 	 
 	      unsigned int i = 0;
@@ -265,18 +265,18 @@ ApplicationController::handleSerialDeviceMessageReceivedEvent(MonomeXXhDevice *d
         }
     
 	 } //end 256
-	else  if (device->type() == MonomeXXhDevice::kDeviceType_mk)
+	/* else  if (device->type() == MonomeXXhDevice::kDeviceType_mk)
 	{
 		
 		unsigned int i = 0;
 		
 		
-        while (i < len) {
-            t_message *message = (t_message *)data;
+		while (i < len) {
+			t_message *message = (t_message *)data;
 			//t_mk_1byte_message *message_1b = (t_mk_1byte_message *)data;
 			t_mk_3byte_message *message_3b = (t_mk_3byte_message *)data;
 			
-            switch (messageGetType(*message)) {
+			switch (messageGetType(*message)) {
 					
 					
 				case kMessageType_mk_keydown:
@@ -330,13 +330,13 @@ ApplicationController::handleSerialDeviceMessageReceivedEvent(MonomeXXhDevice *d
 				default:
 					return -1;
 					
-            }
+			}
 			
-            data += device->messageSize();
-            i += device->messageSize();
-        }
+			data += device->messageSize();
+			i += device->messageSize();
+		}
 		
-	} //end 256
+	} //end mk */
 	
 			 
 	 

@@ -145,6 +145,16 @@ switch (_type)
 		fprintf(stderr, "** m64 has been detected! \n", name);
 		#endif		
 	 break;
+
+	case kDeviceType_mk:
+	 /* XXX: need command to read current dimensions of mk devices */
+
+	 _columns = _rows = 16;
+	 _oscAddressPatternPrefix = "/mk";
+#ifdef _DEBUG_NEW_DEVICE
+	 fprintf(stderr, "** mk has been detected!\n");
+#endif
+	 break;
 	}
 
 

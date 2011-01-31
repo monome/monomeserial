@@ -5,28 +5,20 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>monome-serial</string>
+	<string>Lo</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.monome.MonomeSerial</string>
+	<string>com.apple.carbonframeworktemplate</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.01</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.31</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>© 2011, monome</string>
+	<string>1.0</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
 </dict>
 </plist>

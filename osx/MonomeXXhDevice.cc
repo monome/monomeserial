@@ -201,7 +201,7 @@ unsigned int
 MonomeXXhDevice::DeviceOrientation(void) 
 {
 
-if (_type == kDeviceType_128) return (_orientation+3)%4;
+// if (_type == kDeviceType_128) return (_orientation+3)%4;	// commented out 1/30/11 for gs128 fix
 return _orientation;
 
 }

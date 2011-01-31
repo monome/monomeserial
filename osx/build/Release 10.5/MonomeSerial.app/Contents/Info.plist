@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>MonomeSerial</string>
 	<key>CFBundleIconFile</key>
 	<string>monome-serial</string>
 	<key>CFBundleIdentifier</key>
@@ -13,20 +13,20 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>MonomeSerial</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.31</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>3</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2011, monome</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.31</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>© 2011, monome</string>
 </dict>
 </plist>

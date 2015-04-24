@@ -1,5 +1,7 @@
 # monomeserial
 
+installer download in the github release: https://github.com/monome/monomeserial/releases/latest
+
 ## PLEASE NOTE
 
 monomeserial only works on monome grids made before 2012.

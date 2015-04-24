@@ -8,7 +8,7 @@ monomeserial was deprecated by the new serialosc server in 2011. if you still us
 
 list of monomeserial only applications: http://github.com/monome-community/collect-ms
 
-!()[monomeserial_screenshot.png]
+![](monomeserial_screenshot.png)
 
 monomeserial is a routing application which converts the monome's native serial protocol to OSC or midi in addition to providing support for reorientation and multiple-unit spanning.
 

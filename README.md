@@ -8,7 +8,7 @@ monomeserial only works on monome grids made before 2012.
 
 monomeserial was deprecated by the new serialosc server in 2011. if you still use any old monomeserial applications that need updating for serialosc, post to the forum.
 
-list of monomeserial only applications: http://github.com/monome-community/collect-ms
+list of monomeserial only applications: https://github.com/monome-community/collected-ms
 
 ![](monomeserial_screenshot.png)
 
